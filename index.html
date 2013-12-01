@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>To-do</title>
+  <link rel="stylesheet" href="./css/main2.css"/>
+  <!-- @fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
+  
+
+</head>
+
+<body>
+
+  <div id="todoapp">
+
+    <header>
+    <form id="todoCreateForm">
+      <input id="new-todo" type="text" placeholder="Title">
+      <input id="descr" type="text" placeholder="Title">
+      <input id="date" type="date" placeholder="Title">
+      <button id="go" type="submit" class="btn">Create</button>
+    </form>
+    </header>
+   
+    <section id="main">
+      <input id="toggle-all" type="checkbox"/>
+      <label id="markall"for="toggle-all"><b></b></label>
+    
+
+      <ul id="todo-list"></ul>
+    </section>
+
+    <section id="inprogress">
+      <ul id="todo-list-progress"></ul>
+    </section>
+
+    <section id="completed">
+      <ul id="todo-list-completed"></ul>
+    </section>
+
+<!-- 
+    <div id="intro">
+        <h2></h2>
+    </div> -->
+
+
+    <footer>
+
+    
+      <a id="clear-completed">Clear completed</a>
+      <div id="todo-count"></div>
+    
+    </footer>
+
+  </div>
+
+ 
+
+
+<!-- html pencil  -->
+
+<!--   <div class="pen-container">
+  <div class="pen-erasor"></div>
+  <div class="pen-body">
+    <div class="funnyshitonbody1"></div>
+    <div class="funnyshitonbody2"></div>
+    <div class="funnyshitonbody3"></div>
+    <div class="body-stripe1"></div>
+    <div class="body-stripe2"></div>
+  </div>
+  <div class="pen-triangleshit">
+     <div class="pen-lead"></div>
+  </div>
+</div> -->
+
+
+ <!--  <div id="instructions">
+    Himanshu Jariyal 2013
+  </div> -->
+<!-- scripts for faster loading -->
+  <script src="js/jquery.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/backbone.js"></script>
+  <script src="js/backbone.localStorage.js"></script>
+  <script src="js/todo.js"></script>
+  <script src="js/edited.js"></script>
+
+
+  <!-- Templates -->
+
+  <script type="text/template" id="item-template">
+    <div class="view">
+       <select class="stat-todo">
+          <option value="pend">Pending</option>
+          <option value="inProg">InProgress</option>
+          <option value="comp">Completed</option>
+        </select>
+      <label><%- title %></label>
+      <span id="dateview"><%- date %></span>
+      <img class="trash destroy"  src="./img/trash.png">
+      <img class="pencil" src="./img/writing.ico">
+      <div id="descript"><%- description %></div>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+
+  <script type="text/template" id="stats-template">
+    <% if (done) { %>
+      <a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+    <% } %>
+    <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+  </script>
+
+
+  </body>
+</html>
