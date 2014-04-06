@@ -59,29 +59,8 @@
 
  
 
-
-<!-- html pencil  -->
-
-<!--   <div class="pen-container">
-  <div class="pen-erasor"></div>
-  <div class="pen-body">
-    <div class="funnyshitonbody1"></div>
-    <div class="funnyshitonbody2"></div>
-    <div class="funnyshitonbody3"></div>
-    <div class="body-stripe1"></div>
-    <div class="body-stripe2"></div>
-  </div>
-  <div class="pen-triangleshit">
-     <div class="pen-lead"></div>
-  </div>
-</div> -->
-
-
- <!--  <div id="instructions">
-    Himanshu Jariyal 2013
-  </div> -->
-<!-- scripts for faster loading -->
-  <script src="js/jquery.js"></script>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script src="js/underscore.js"></script>
   <script src="js/backbone.js"></script>
   <script src="js/backbone.localStorage.js"></script>
@@ -113,7 +92,14 @@
     <% } %>
     <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
   </script>
-
+   <script type="text/javascript">
+  	$( "#todo-list" ).sortable();
+    $( "#todo-list" ).disableSelection();
+    $( "#todo-list-completed" ).sortable();
+    $( "#todo-list-completed" ).disableSelection();
+    $( "#todo-list-progress" ).sortable();
+    $( "#todo-list-progress" ).disableSelection();
+  </script>
 
   </body>
 </html>
